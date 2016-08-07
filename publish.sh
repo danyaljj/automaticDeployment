@@ -15,11 +15,11 @@ if [ "$BRANCH_NAME" != "master" ]; then
   exit 0
 fi
 
-numParents=`git log --pretty=%P -n 1 | wc -w | xargs`
-if [ $numParents -ne 2 ]; then
-  echo "$numParents parent commits of HEAD when exactly 2 expected, not publishing."
-  exit 0
-fi
+# numParents=`git log --pretty=%P -n 1 | wc -w | xargs`
+# if [ $numParents -ne 2 ]; then
+#   echo "$numParents parent commits of HEAD when exactly 2 expected, not publishing."
+#   exit 0
+# fi
 
 # change the version number 
 sh increment-pom-versions.sh
