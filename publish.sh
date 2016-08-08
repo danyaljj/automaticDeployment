@@ -42,6 +42,5 @@ mvn deploy -Dmaven.test.skip=true
 git config --global user.email "khashab2@illinois.edu"
 git config --global user.name "SemaphoreCI"
 git add pom.xml 
-git add */pom.xml 
 git commit -m 'automatic version increment'
 git push origin master 
