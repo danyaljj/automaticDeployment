@@ -35,5 +35,13 @@ ssh-add /home/runner/.ssh/ai2
 # mv ~/.ssh/tmp_hosts ~/.ssh/known_hosts
 ssh-keyscan -H -p 22 bilbo.cs.illinois.edu >> ~/.ssh/known_hosts
 
-# going to deploy 
-mvn deploy
+# going to deploy, without testing (since we should have tested earlier, before running the "publish.sh" script) 
+mvn deploy -Dmaven.test.skip=true
+
+# commit changes and push them to the repo
+git config --global user.email "khashab2@illinois.edu"
+git config --global user.name "SemaphoreCI"
+git add pom.xml 
+git add */pom.xml 
+git commit -m 'automatic version increment'
+git push origin master 
