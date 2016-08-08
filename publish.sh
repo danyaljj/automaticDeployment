@@ -31,8 +31,9 @@ ssh-add /home/runner/.ssh/ai2
 
 # add to the known hosts 
 # ssh-keygen -R bilbo.cs.illinois.edu
-ssh-keyscan -t rsa,dsa bilbo.cs.illinois.edu 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
-mv ~/.ssh/tmp_hosts ~/.ssh/known_hosts
+# ssh-keyscan -t rsa,dsa bilbo.cs.illinois.edu 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
+# mv ~/.ssh/tmp_hosts ~/.ssh/known_hosts
+ssh-keyscan -H -p 22 bilbo.cs.illinois.edu >> ~/.ssh/known_hosts
 
 # going to deploy 
 mvn deploy
