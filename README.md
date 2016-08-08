@@ -1,6 +1,6 @@
 # Automatic deployment via SemaphoreCI 
 
-The meat of the project is in `publish.sh` file. 
+The meat of the project is in `publish.sh`. 
 The current project is based on maven, but it can easily be applied to other projects with minor modifications. 
 
 The requirement is adding two [configuration files](https://semaphoreci.com/docs/adding-custom-configuration-files.html): 
