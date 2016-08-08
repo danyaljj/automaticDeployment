@@ -22,7 +22,16 @@ fi
 # fi
 
 # change the version number 
-sh increment-pom-versions.sh
+bash increment-pom-versions.sh
+
+
+# setup the authentication required for deploy
+# start the ssh-agent in the background
+eval "$(ssh-agent -s)"
+ssh-add /home/runner/.ssh/ai2
+
+# add to the known hosts 
+ssh -o StrictHostKeyChecking=no khashab2@bilbo.cs.illinois.edu
 
 # going to deploy 
 mvn deploy
