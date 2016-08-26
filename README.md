@@ -1,5 +1,7 @@
 # Automatic deployment via SemaphoreCI 
 
+
+
 The meat of the project is in `publish.sh`. 
 The current project is based on maven, but it can easily be applied to other projects with minor modifications. 
 
